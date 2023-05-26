@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithms</title>
+</head>
+<body>
+  <!-- <div class="loading" *ngIf="!dataAlgo">
+    <div class="loader"></div>
+    <div class="loading-text">Please wait... <br>  </div>
+  </div> -->
+  <h2 class="text-center p-4  ">Choose an algorithm to use </h2>
+    <div class="outer" >
+      <div class="container ">
+        <div class="column justify-content-center">
+        <div class="btn-group mb-1 ms-5">
+          <button  (click)="executeDT()"  class="btn btn-success p-3" type="button">Descision Tree</button>
+          <button class="btn dropdown-toggle dropdown-toggle-split btn-success me-4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only"></span></button>
+          <div class="dropdown-menu">
+
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#">Read about Decision Tree</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+        <div class="btn-group mb-1 ms-2">
+          <button  (click)="executeRF()"  class="btn btn-warning p-3" type="button">Random Forest</button>
+          <button class="btn dropdown-toggle dropdown-toggle-split btn-warning  me-4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only"></span></button>
+          <div class="dropdown-menu">
+
+            <a class="dropdown-item" href="#">Read about Random Forest</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+        <div class="btn-group mb-1 ms-2">
+          <button (click)="executeSVM()" class="btn btn-secondary p-3" type="button">SVM</button>
+          <button class="btn dropdown-toggle dropdown-toggle-split btn-secondary  me-4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only"></span></button>
+          <div class="dropdown-menu">
+
+            <a class="dropdown-item" href="#">Read about SVM</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+        <div class="btn-group mb-1 ms-2">
+          <button (click)="executeLR()" class="btn btn-info p-3" type="button">Logistic Regression</button>
+          <button class="btn dropdown-toggle dropdown-toggle-split btn-info  me-4 " type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only"></span></button>
+          <div class="dropdown-menu">
+
+            <a class="dropdown-item" href="#">Read about Logistic Regression</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+        <div class="btn-group mb-1 ms-1">
+          <button  (click)="executeGBC()" class="btn1 btn btn-secondary p-3  " type="button">Gradient Boosting Classifier</button>
+          <button class="btn dropdown-toggle dropdown-toggle-split btn-secondary" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only"></span></button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Read about Gradient Boosting Classifier</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+      </div>
+      <div class="row g-1 mt-2">
+        <div class="col-12 col-md-6">
+          <div class="card border border-200 shadow-none h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="mb-1">Confusion Matrix:</h5>
+                </div>
+              </div>
+              <div class="justify-content-center pt-1 pb-4">
+                <div><img class="ms-3" style="height: 279px;width:420px" src="{{this.cm}}"></div>
+              </div>
+              <form [formGroup]="formDat">
+                <input value="Confusion matrix" formControlName="name" name="name" hidden>
+
+              <div class="m-1">
+                <label class="form-label" for="exampleTextarea">Comment</label>
+                <textarea class="form-control" name="comment" formControlName="comment" id="exampleTextarea"  [placeholder]="'Comment these results '" rows="3"></textarea>
+              </div>
+              <!-- <button (click)="addComment('Confusion matrix')" type="button" class="btn btn-primary mt-3">Add Comment</button> -->
+</form>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card border border-200 shadow-none h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="mb-1">Receiver Operating Characteristic: </h5>
+                </div>
+              </div>
+              <div class="justify-content-center pt-1 pb-4">
+                <div><img class="ms-3" style="height: 279px;width:420px" src="{{this.curve}}"></div>
+              </div>
+
+            <form [formGroup]="formDat">
+              <input value="Receiver operating Characteristics" formControlName="name" name="name" hidden>
+
+              <div class="m-1">
+                <label class="form-label" for="exampleTextarea">Comment</label>
+                <textarea class="form-control" name="comment" formControlName="comment" id="exampleTextarea"  [placeholder]="'Comment these results '" rows="3"></textarea>
+              </div>
+              <!-- <button (click)="addComment('Receiver Operating Characteristic')" type="button" class="btn btn-primary m-3">Add Comment</button> -->
+</form>
+</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 ">
+          <div class="card border border-200 shadow-none h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="mb-1">Accuracy : </h5>
+                </div>
+              </div>
+              <div class="justify-content-center pt-2 pb-4">
+                <div><img class="ms-3" style="height: 279px;width:420px" src="{{this.acc}}"></div>
+              </div>
+                <form [formGroup]="formDat">
+                  <input name="name"  value="Accuracy" formControlName="name" name="name" hidden/>
+                  <div class="m-1">
+                    <label class="form-label" for="exampleTextarea">Comment</label>
+                    <textarea name="comment"  class="form-control" formControlName="comment" id="exampleTextarea"  [placeholder]="'Comment these results '" rows="3"></textarea>
+                  </div>
+                  <!-- <button (click)="addComment('Accuracy')" type="button" class="btn btn-primary mt-3">Add Comment</button> -->
+    </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card border border-200 shadow-none h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="mb-2">Classification Report :</h5>
+                </div>
+              </div>
+              <div class="justify-content-center pt-0 pb-2">
+                <div><img class="ms-3" style="height: 279px;width:420px" src="{{this.report}}"></div>
+              </div>
+              <form [formGroup]="formDat">
+                <input name="name" value="Classification report" name="name" formControlName="name" hidden>
+                <div class="mt-4">
+                  <label class="form-label" for="exampleTextarea">Comment</label>
+                  <textarea name="comment" class="form-control"formControlName="comment" id="exampleTextarea"  [placeholder]="'Comment these results '" rows="3"></textarea>
+                </div>
+                <!-- <button (click)="addComment('Classification report')" type="button" class="btn btn-primary mt-3">Add Comment</button> -->
+  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="button-container">
+      <button class="next-button" routerLink="/report" [disabled]="!algoGenerated">NEXT</button>
+      <button class="back-button" routerLink="/dataprocessing">Back</button>
+      <button class="retry-button" (click)="retry()">Try Again</button>
+    </div>
+
+  </body>
+  </html>

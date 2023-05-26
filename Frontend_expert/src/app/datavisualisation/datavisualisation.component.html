@@ -1,0 +1,104 @@
+<body>
+<div class="loading" *ngIf="!dataVisualised">
+  <div class="loader"></div>
+  <div class="loading-text">Please wait...We are generating plots! </div>
+</div>
+<div class="intro-container">
+  <h2>Welcome to the Data visualisation Step!</h2>
+  <p class="intro-text">Visualizing data is a crucial step in data analysis. It helps to gain insights, identify patterns, and communicate findings effectively. Below are some visualizations that can assist you in understanding the data:</p>
+</div>
+<div class="visualisation">
+<h3 class="section-title">Plots:</h3>
+  <div class="image-row">
+    <div *ngFor="let image of images.slice(0, 3)" class="image-container">
+      <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+    </div>
+  </div>
+  <br>
+<br>
+  <div class="image-row">
+    <div *ngFor="let image of images.slice(3, 6)" class="image-container">
+      <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+    </div>
+  </div>
+  
+<br>
+<br>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(6, 7)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<br>
+<br>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(7, 10)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<br>
+<br>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(10, 13)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(13, 16)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<br>
+<br>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(16, 19)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(19, 22)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<br>
+<br>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(22, 25)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<br>
+<br>
+<div class="image-row">
+  <div *ngFor="let image of images.slice(25, 28)" class="image-container">
+    <img [src]="'http://localhost:5000/static/' + image" alt="plot" class="image">
+  </div>
+</div>
+<br>
+<br>
+
+  <div class="time-taken">
+    <i class="fa fa-hourglass-half"></i>
+    <div class="time">
+      <span class="time-label">Time Taken:</span>
+      <span class="time-value">{{ time_taken }} ms</span>
+    </div>
+  </div>
+  
+    
+      <div class="comment-section">
+        <label for="comment">Add a comment:</label>
+        <textarea id="comment" rows="5" [(ngModel)]="comment" placeholder="You can add here your observations for the data preprocessing results. The plots provided can help you build your observations."></textarea>
+      </div>
+        <div class="button-container">
+          <button class="comment-button" (click)="submitForm()" [disabled]="error || !dataVisualised">Submit Comment</button>
+          <button class="next-button" routerLink="/dataprocessing" [disabled]="!dataVisualised">NEXT</button>
+          <button class="back-button" routerLink="/datavisualisation">Back</button>
+          <button class="retry-button" (click)="retry()">Try Again</button>
+        </div>
+    
+        
+        <div *ngIf="error" class="error">{{ error }}</div>
+    </div>
+  </body>
+    

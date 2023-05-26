@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  background-color: #a0c9ee;
+}
+.intro-container{
+ text-align: center;
+}
+.section-title{
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  transition: smooth;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3f72af;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.preprocessing-container {
+  background-color: #a0c9ee;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #dbe2ef;
+}
+
+table, th, td {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+th {
+  background-color: #3f72af;
+  text-align: left;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-section {
+  margin: 30px;
+}
+
+.comment-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.comment-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  resize: vertical;
+  font-size: 16px;
+  color: #000000;
+  transition: border-color 0.3s ease;
+}
+
+.comment-section textarea:focus {
+  outline: none;
+  border-color: #3f72af;
+  box-shadow: 0 0 5px rgba(63, 114, 175, 0.5);
+}
+
+.outlier-image {
+  margin-top: 50px;
+  border: 1px solid #000000;
+  width: 650px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.outlier-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.outlier-table th,
+.outlier-table td {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+.outlier-table th {
+  background-color: #3f72af;
+  text-align: left;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.column-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-list li {
+  padding: 10px;
+  margin: 5px;
+  background-color: #3f72af;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.numeric-list li {
+  background-color: #3f72af;
+  color: #ffffff;
+}
+
+.time-taken {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.fa-hourglass-half {
+  font-size: 32px;
+  color: #43b893;
+  margin-right: 10px;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+}
+
+.time-label {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.time-value {
+  font-weight: 500;
+  color: #4CAF50;
+  font-size: 1.5em;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.comment-button {
+  background-color: #6e6ef6;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #c9c9ff;
+}
+
+.next-button {
+  background-color: #009688;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #00796b;
+}
+
+.back-button {
+  background-color: #f44336;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #c62828;
+}
+
+.retry-button {
+  background-color: #505ee0;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: #3b47ba;
+}

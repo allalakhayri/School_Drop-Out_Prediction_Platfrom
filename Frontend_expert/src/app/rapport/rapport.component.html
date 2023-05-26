@@ -1,0 +1,79 @@
+<div class="final">
+<header>
+    <div class="logo">Final Report</div>
+    <div class="date">{{ date | date:'dd/MM/yyyy' }}</div>
+  </header>
+  
+  <!-- Report container -->
+  <div class="report">
+  
+    <!-- Summary section -->
+    <div class="summary">
+      <h2>Summary</h2>
+      <p>Time taken for preprocessing: {{ time_preprocessing }} seconds</p>
+      <p>Time taken for processing: {{ time_processing }} seconds</p>
+      <p>Total time taken: {{ time_tot }} seconds</p>
+    </div>
+    <table class="outlier-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Importance</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feature of Important_features | keyvalue">
+            <td>{{ feature.key }}</td>
+            <td>{{ feature.value}}</td>
+          </tr>  
+        </tbody>
+      </table>
+  
+   
+  
+    <!-- Columns section -->
+    <div class="columns">
+      
+    <h3 class="section-title">Categorical Columns:</h3>
+    <ul class="column-list">
+    <li *ngFor="let col of cat_cols">{{col}}</li>
+    </ul>
+
+  <h3 class="section-title">Numerical Columns:</h3>
+  <ul class="column-list">
+    <li *ngFor="let col of num_cols">{{col}}</li>
+  </ul>
+    </div>
+
+    <div class="classification">
+      <h2>Classification Reports</h2>
+      <h3>Random Forest Classifier:</h3>
+      <p>{{ classif_report_rf }}</p>
+      <h3>Decision Tree Classifier:</h3>
+      <p>{{ classif_report_dt }}</p>
+      <h3>Gradient Boosting Classifier:</h3>
+      <p>{{ classif_report_gbm }}</p>
+      <h3>SVM Classifier:</h3>
+      <p>{{ classif_report_svm }}</p>
+      <h3>Logistic Regression Classifier:</h3>
+      <p>{{ classif_report_clf }}</p>
+    </div>
+    <br>
+    <br>
+    
+    <div class="conclusion">
+      <p>The most suitable algorithm for your data based on accuracy values  is: Random Forest Classifier </p>
+    </div>
+    <div class="download">
+      <button class="download-button" (click)="download()">Download the report</button>
+    </div>
+    
+    <!-- Loading section -->
+    <div *ngIf="!dataGenerated && !error" class="loading">
+      <p>Loading report...</p>
+    </div>
+  
+   
+  </div>
+</div>
