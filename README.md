@@ -1,4 +1,4 @@
-# School_Drop-Out_Prediction_Platfrom
+# School Drop-Out Prediction Platfrom
 This project is a web-based platform developed for predicting the risk of school dropout among students. It utilizes Angular for the frontend, Flask for the backend, and SQL as the database.
 
 ## Features
